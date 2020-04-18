@@ -1,4 +1,4 @@
-# Quasar App (safebank)
+# Quasar App (HelpingSomeBody)
 
 A Quasar Framework app
 
