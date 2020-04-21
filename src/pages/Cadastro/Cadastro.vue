@@ -3,7 +3,7 @@
     <q-form class="form-cadastro q-gutter-lg center">
       <div class="card">
 <div class="card-header text-center">
-  <h4>Novo Cadastro</h4>
+  <h4>Cadastro Usúario</h4>
   </div>
       <q-input type="text"
       required

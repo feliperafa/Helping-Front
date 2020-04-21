@@ -36,20 +36,21 @@ Quasar
         <q-route-tab to="/projetos" label="Projetos" />
         <q-route-tab to="/page3" label="Paceriros" />
         <q-route-tab to="/page3" label="Como Participar" />
-        <q-route-tab to="/login" label="Doe Agora" />
+        <q-route-tab to="/login" label="Login" />
+        <q-route-tab to="/selectcadastro" label="Cadastre-se" />
       </q-tabs>
     </q-header>
 
     <q-page-container>
       <router-view />
     </q-page-container>
-    <q-footer elevated class="bg-cyan text-White">
+    <!-- <q-footer elevated class="bg-cyan text-White">
       <q-toolbar>
         <q-toolbar-title class="bottom-right">
           Todos os direitos reservados Helping SomeBody &copy;
         </q-toolbar-title>
       </q-toolbar>
-    </q-footer>
+    </q-footer> -->
 
   </q-layout>
 </template>

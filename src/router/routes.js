@@ -7,6 +7,8 @@ const routes = [
       { path: '/', component: () => import('../pages/Page/sobreNos') },
       { path: '/cadastro', component: () => import('../pages/Cadastro/Cadastro') },
       { path: '/login', component: () => import('../pages/Login/Login.vue') },
+      { path: '/selectcadastro', component: () => import('../pages/Cadastro/SelectCadastro') },
+      { path: '/cadastroong', component: () => import('../pages/Cadastro/CadastroOng') },
       { path: '/projetos', component: () => import('../pages/Page/projetos') }
     ]
   }
