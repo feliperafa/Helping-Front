@@ -1,10 +1,9 @@
 <template>
-<q-page>
+<q-page class="img">
     <q-form class="form-cadastro q-gutter-lg center">
       <div class="card">
-<div class="card-header text-center">
-  <h4>Cadastro Usúario</h4>
-  </div>
+<div class="card-header text-center" />
+      <h4>Cadastro Doador</h4>
       <q-input type="text"
       required
       filled v-model="newOngs.nome"
@@ -78,7 +77,6 @@ export default {
 </script>
 <style>
 .form-cadastro {
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,5 +84,8 @@ export default {
 .card {
     width: 25%;
     color: #111;
+  }
+  .img {
+  background-image: linear-gradient(to right, cyan, yellow);
   }
 </style>

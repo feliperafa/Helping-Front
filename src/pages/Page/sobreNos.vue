@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-md">
+  <div class="q-pa-md img">
     <q-carousel
       animated
       v-model="slide"
@@ -63,4 +63,7 @@ export default {
 }
 </script>
 <style lang="scss">
+.img {
+  background-image: linear-gradient(to right, cyan, yellow);
+  }
 </style>

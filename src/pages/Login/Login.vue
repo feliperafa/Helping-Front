@@ -1,11 +1,11 @@
 <template>
-<q-page Container class="flex flex-center">
+<q-page Container class="flex flex-center img">
       <div class="q-pa-md" style="max-width: 600px">
     <q-form  @submit.prevent="loginNow()" class="q-gutter-lg center">
 
         <h4>Helping SomeBody</h4>
         <q-input type="text"
-        requiered filled v-model="form.cpf"
+        requiered filled v-model="form.email"
          label="Informe Seu Cpf... *" />
 
         <q-input class="q-pt-md"
@@ -31,7 +31,7 @@ export default {
   name: 'login',
   data () {
     return {
-      form: { cpf: '', senha: '' }
+      form: { email: '', senha: '' }
     }
   },
   methods: {
@@ -61,7 +61,7 @@ export default {
 </script>
 
 <style>
-.logo {
-background:#A1CFFF;
-}
+.img {
+  background-image: linear-gradient(to right, cyan, yellow);
+  }
 </style>
