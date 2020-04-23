@@ -1,5 +1,5 @@
 <template>
-<q-page class="container">
+<q-page class="container img">
   <div class="row">
     <div class="col">
   <div class="q-pa-md row items-start q-gutter-md">
@@ -18,7 +18,7 @@
       <q-separator dark />
 
       <q-card-actions>
-        <q-btn flat>Doe Agora</q-btn>
+        <q-btn flat to="/login">Doe Agora</q-btn>
         <q-btn flat>Quero ser voluntariar</q-btn>
       </q-card-actions>
     </q-card>
@@ -50,9 +50,12 @@ export default {
 <style>
 .my-card{
   width: 100%;
-  max-width: 250px;
+  max-width: 320px;
 }
 .cores {
 background-color:#A1CFFF;
 }
+.img {
+  background-image: linear-gradient(to right, cyan, yellow);
+  }
 </style>

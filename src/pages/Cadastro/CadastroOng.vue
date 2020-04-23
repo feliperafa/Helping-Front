@@ -1,10 +1,9 @@
 <template>
-<q-page>
+<q-page class="img">
     <q-form class="form-cadastro q-gutter-lg center">
       <div class="card">
-        <q-toolbar-title>Cadastro Ong</q-toolbar-title>
-<div class="card-header text-center"><br><br><br><br><br><br><br><br><br><br><br>
-  </div>
+<div class="card-header text-center" />
+      <h4>Cadastro Ong</h4>
       <q-input type="text"
       required
       filled v-model="newOngs.nome"
@@ -45,17 +44,14 @@
       filled v-model="newOngs.descricao"
       label="Informe um breve texto sobre a causa que a Ong Apoia... *" /><br>
 
-      <div>
         <q-btn @click="save"
         glossy color="primary"
-        class="full-width">Cadastra</q-btn>
-      </div>
-      <br>
-      <div>
+        class="full-width">Cadastra</q-btn><br><br>
+
         <q-btn to="/"
         glossy color="primary"
         class="full-width q-mb-lg">Voltar</q-btn>
-      </div>
+
         </div>
     </q-form>
 </q-page>
@@ -96,7 +92,6 @@ export default {
 </script>
 <style>
 .form-cadastro {
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,5 +99,8 @@ export default {
 .card {
     width: 25%;
     color: #111;
+  }
+  .img {
+  background-image: linear-gradient(to right, cyan, yellow);
   }
 </style>
