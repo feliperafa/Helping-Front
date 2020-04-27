@@ -1,23 +1,17 @@
 <template>
-<div class="container">
-  <div class="q-pa-md">
-    <q-btn-dropdown glossy color="cyan" label="Selecione o Tipo de Cadastro">
-      <q-list>
-        <q-item clickable v-close-popup @click="onItemClick" to="/cadastroong">
-          <q-item-section>
-            <q-item-label>Cadastrar Ong</q-item-label>
-          </q-item-section>
-        </q-item>
-
-        <q-item clickable v-close-popup @click="onItemClick" to="/cadastro">
-          <q-item-section>
-            <q-item-label>Cadastrar Doador</q-item-label>
-          </q-item-section>
-        </q-item>
-      </q-list>
-    </q-btn-dropdown>
+  <div class="q-pa-md img">
+    <q-btn-group spread>
+      <q-btn glossy color="cyan" label="Cadastro Ong" icon="star" class="full-width" to="/cadastroong" />
+      <q-btn glossy color="cyan" label="Cadastro Doador" icon="star" class="full-width" to="/cadastro" />
+    </q-btn-group>
   </div>
-</div>
+
 </template>
+<script>
+</script>
 <style lang="scss">
+.img {
+  background-image: linear-gradient(to right, white, grey);
+  padding:43.3vh;
+  }
 </style>

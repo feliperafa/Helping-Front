@@ -1,57 +1,60 @@
 <template>
-<q-page class="img">
+<q-page>
     <q-form class="form-cadastro q-gutter-lg center">
-      <div class="card">
-<div class="card-header text-center" />
-      <h4>Cadastro Ong</h4>
-      <q-input type="text"
+      <div class="q-pa-md">
+    <div class="row q-col-gutter-sm">
+
+      <q-input type="text" class="col-12 col-md-6"
       required
       filled v-model="newOngs.nome"
-      label="Informe o Nome da sua Ong... *" /><br>
+      label="Informe o Nome da sua Ong... *" />
 
-      <q-input type="text"
+      <q-input type="text" class="col-12 col-md-6"
       required
       filled v-model="newOngs.endereco"
-      label="Informe Seu Endereço... *" /><br>
+      label="Informe Seu Endereço... *" />
 
-      <q-input type="text"
+      <q-input type="text" class="col-12 col-md-6"
       required
       filled v-model="newOngs.numero"
-      label="Informe Seu Número... *" /><br>
+      label="Informe Seu Número... *" />
 
-      <q-input type="text"
+      <q-input type="text" class="col-12 col-md-6"
       required
       filled v-model="newOngs.telefone"
-      label="Informe Seu Telefone... *" /><br>
+      label="Informe Seu Telefone... *" />
 
-     <q-input type="text"
+     <q-input type="text" class="col-12 col-md-6"
       required
       filled v-model="newOngs.cnpj"
-      label="Informe Seu cnpj... *" /><br>
+      label="Informe Seu cnpj... *" />
 
-      <q-input type="text"
+      <q-input type="text" class="col-12 col-md-6"
       required
       filled v-model="newOngs.email"
-      label="Informe Seu E-mail... *" /><br>
+      label="Informe Seu E-mail... *" />
 
-      <q-input type="password"
+      <q-input type="password" class="col-12"
       required
       filled v-model="newOngs.senha"
-      label="Informe Sua Senha... *" /><br>
+      label="Informe Sua Senha... *" />
 
-      <q-input type="textarea"
+      <q-input type="textarea" class="col-12"
       required
       filled v-model="newOngs.descricao"
-      label="Informe um breve texto sobre a causa que a Ong Apoia... *" /><br>
+      label="Informe um breve texto sobre a causa que a Ong Apoia... *" />
 
-        <q-btn @click="save"
-        glossy color="primary"
-        class="full-width">Cadastra</q-btn><br><br>
-
+       <div class="q-pa-md" style="max-width: 400px">
+    <div class="q-gutter-x-xs q-gutter-y-lg">
+       <q-btn @click="save"
+        glossy color="cyan"
+        class="full-width">Cadastra</q-btn>
         <q-btn to="/"
-        glossy color="primary"
-        class="full-width q-mb-lg">Voltar</q-btn>
-
+        glossy color="cyan"
+        class="full-width">Voltar</q-btn>
+        </div>
+        </div>
+        </div>
         </div>
     </q-form>
 </q-page>
@@ -96,11 +99,7 @@ export default {
   align-items: center;
   justify-content: center;
   }
-.card {
-    width: 25%;
-    color: #111;
-  }
   .img {
-  background-image: linear-gradient(to right, cyan, yellow);
+  background-image:linear-gradient(to right, white, grey);
   }
 </style>

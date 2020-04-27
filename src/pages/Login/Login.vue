@@ -19,14 +19,14 @@
         glossy color="cyan"
         class="full-width">Entrar</q-btn>
 
-        <a class="a" href="/cadastro">Não tem uma conta? Cadastre-se</a>
+        <a class="a" href="/selectcadastro">Não tem uma conta? Cadastre-se</a>
         </div>
  </q-form>
 </div>
 </q-page>
 </template>
-
 <script>
+
 export default {
   name: 'login',
   data () {
@@ -36,24 +36,15 @@ export default {
   },
   methods: {
     async loginNow () {
-      await this.$axios.post(`${process.env.API}/auth`, this.form).then((res) => {
+      await this.$axios.post(`${process.env.API}/ongs/auth`, this.form).then((res) => {
         console.log(res)
         alert('Credencia Autorizadas com Sucesso!')
+        window.localStorage.idUsuarioLogado = res.data.id
         this.$router.push('/dashboard')
       }).catch(err => {
         alert('Verifique sua Credencia ou Crie um Conta!')
         console.log(err)
       })
-      // this.$axios.post(`${process.env.API}/auth`, this.login).then((res, user) => {
-      //   window.uid = user ? user.uid : null
-      //   if (window.uid) {
-      //     this.$router.push('/dashboard')
-      //   } else {
-      //     this.$router.push('/')
-      //   }
-      // }).catch(err => {
-      //   console.log(err)
-      // })
     }
   }
 }
@@ -62,6 +53,6 @@ export default {
 
 <style>
 .img {
-  background-image: linear-gradient(to right, cyan, yellow);
+  background-image: linear-gradient(to right, white, grey);
   }
 </style>

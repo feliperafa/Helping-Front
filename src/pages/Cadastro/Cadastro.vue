@@ -1,44 +1,44 @@
 <template>
-<q-page class="img">
+<q-page>
     <q-form class="form-cadastro q-gutter-lg center">
-      <div class="card">
-<div class="card-header text-center" />
-      <h4>Cadastro Doador</h4>
-      <q-input type="text"
+      <div class="q-pa-md">
+    <div class="row q-col-gutter-sm">
+      <q-input type="text" class="col-12 col-md-6"
       required
       filled v-model="newOngs.nome"
-      label="Informe Seu Nome... *" /><br>
-      <q-input type="text"
+      label="Informe Seu Nome... *" />
+      <q-input type="text" class="col-12 col-md-6"
       required
       filled v-model="newOngs.telefone"
-      label="Informe Seu Telefone... *" /><br>
+      label="Informe Seu Telefone... *" />
 
-     <q-input type="text"
+     <q-input type="text" class="col-12 col-md-6"
       required
       filled v-model="newOngs.cnpj"
-      label="Informe Seu cnpj... *" /><br>
+      label="Informe Seu cnpj... *" />
 
-      <q-input type="text"
+      <q-input type="text" class="col-12 col-md-6"
       required
       filled v-model="newOngs.email"
-      label="Informe Seu E-mail... *" /><br>
+      label="Informe Seu E-mail... *" />
 
-      <q-input type="password"
+      <q-input type="password" class="col-12 col-md-12"
       required
       filled v-model="newOngs.senha"
-      label="Informe Sua Senha... *" /><br>
+      label="Informe Sua Senha... *" />
 
-      <div>
+       <div class="q-pa-md" style="max-width: 400px">
+    <div class="q-gutter-x-xs q-gutter-y-lg">
         <q-btn @click="save"
-        glossy color="primary"
+        glossy color="cyan"
         class="full-width">Cadastra</q-btn>
-      </div>
-      <br>
-      <div>
+
         <q-btn to="/"
-        glossy color="primary"
+        glossy color="cyan"
         class="full-width q-mb-lg">Voltar</q-btn>
       </div>
+       </div>
+        </div>
         </div>
     </q-form>
 </q-page>
@@ -86,6 +86,6 @@ export default {
     color: #111;
   }
   .img {
-  background-image: linear-gradient(to right, cyan, yellow);
+  background-image: linear-gradient(to right, white, grey);
   }
 </style>
