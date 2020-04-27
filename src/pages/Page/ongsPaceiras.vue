@@ -16,13 +16,8 @@
       </div>
       </div>
 </template>
-<script>
-export default {
-
-}
-</script>
 <style lang="stylus" scoped>
 .img {
-  background-image: linear-gradient(to right, cyan, yellow);
+  background-image: linear-gradient(to right, white, grey);
   }
 </style>

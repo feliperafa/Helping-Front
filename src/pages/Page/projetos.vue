@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col">
   <div class="q-pa-md row items-start q-gutter-md">
-    <q-card class="my-card bg-secondary text-white" v-for="(ong, index) in ongs" :key="index">
+    <q-card  class="my-card bg-cyan text-white" v-for="(ong, index) in ongs" :key="index">
       <q-card-section>
         <div class="text-h6">{{ ong.nome }}</div>
       </q-card-section>
@@ -19,7 +19,7 @@
 
       <q-card-actions>
         <q-btn flat to="/login">Doe Agora</q-btn>
-        <q-btn flat>Quero ser voluntariar</q-btn>
+        <q-btn flat to="/cadastrovoluntario">Quero ser voluntariar</q-btn>
       </q-card-actions>
     </q-card>
   </div>
@@ -56,6 +56,6 @@ export default {
 background-color:#A1CFFF;
 }
 .img {
-  background-image: linear-gradient(to right, cyan, yellow);
+  background-image: linear-gradient(to right, white, grey);
   }
 </style>
