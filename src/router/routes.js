@@ -7,7 +7,7 @@ const routes = [
       // Pagina Inicial
       { path: '/', component: () => import('../pages/Page/sobreNos') },
       // Pagina Cadastro Doador
-      { path: '/cadastro', component: () => import('../pages/Cadastro/Cadastro') },
+      { path: '/cadastrodoador', component: () => import('../pages/Cadastro/CadastroDoador') },
       // Pagina de Login
       { path: '/login', component: () => import('../pages/Login/Login.vue') },
       // Pagina para Selecionar qual cadastro Criar Doador / Ong
@@ -15,7 +15,7 @@ const routes = [
       // Pagina de Cadastro da Ong
       { path: '/cadastroong', component: () => import('../pages/Cadastro/CadastroOng') },
       // Pagina de Empresas Parceiras
-      { path: '/paceiras', component: () => import('../pages/page/ongsPaceiras') },
+      { path: '/paceiras', component: () => import('../pages/page/empresasPaceiras') },
       // Pagina de DashBoard Para o Administrador
       { path: '/dashboard', component: () => import('../pages/Dashboard/dashboard') },
       // Pagina de Cadastro de Voluntario
