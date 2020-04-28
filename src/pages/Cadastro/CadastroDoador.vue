@@ -5,26 +5,36 @@
     <div class="row q-col-gutter-sm">
       <q-input type="text" class="col-12 col-md-6"
       required
-      filled v-model="newOngs.nome"
+      filled v-model="newDoador.nome"
       label="Informe Seu Nome... *" />
       <q-input type="text" class="col-12 col-md-6"
       required
-      filled v-model="newOngs.telefone"
+      filled v-model="newDoador.telefone"
       label="Informe Seu Telefone... *" />
 
      <q-input type="text" class="col-12 col-md-6"
       required
-      filled v-model="newOngs.cnpj"
-      label="Informe Seu cnpj... *" />
+      filled v-model="newDoador.cpf"
+      label="Informe Seu cpf... *" />
 
       <q-input type="text" class="col-12 col-md-6"
       required
-      filled v-model="newOngs.email"
+      filled v-model="newDoador.endereco"
+      label="Informe Seu Endereço... *" />
+
+      <q-input type="text" class="col-12 col-md-6"
+      required
+      filled v-model="newDoador.numero"
+      label="Informe Seu Número... *" />
+
+      <q-input type="text" class="col-12 col-md-6"
+      required
+      filled v-model="newDoador.email"
       label="Informe Seu E-mail... *" />
 
       <q-input type="password" class="col-12 col-md-12"
       required
-      filled v-model="newOngs.senha"
+      filled v-model="newDoador.senha"
       label="Informe Sua Senha... *" />
 
        <div class="q-pa-md" style="max-width: 400px">
@@ -48,21 +58,22 @@ export default {
   name: 'newUser',
   data () {
     return {
-      newOngs: {
+      newDoador: {
         nome: '',
-        cnpj: '',
+        cpf: '',
         telefone: '',
-        descricao: '',
+        numero: '',
         email: '',
-        senha: ''
+        senha: '',
+        endereco: ''
       }
     }
   },
   methods: {
 
     async save () {
-      await this.$axios.post(`${process.env.API}/ongs`, this.newOngs).then((res) => {
-        alert('Usúario Cadastrado com sucesso !')
+      await this.$axios.post(`${process.env.API}/doador`, this.newDoador).then((res) => {
+        alert('Doador Cadastrado com sucesso !')
         this.reset()
         this.$router.push('/')
       }).catch(err => {
@@ -70,7 +81,7 @@ export default {
       })
     },
     reset () {
-      this.newOngs = {}
+      this.newDoador = {}
     }
   }
 }
