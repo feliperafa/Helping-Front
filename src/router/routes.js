@@ -20,6 +20,8 @@ const routes = [
       { path: '/dashboard', component: () => import('../pages/Dashboard/dashboard') },
       // Pagina de Cadastro de Voluntario
       { path: '/cadastrovoluntario', component: () => import('../pages/Cadastro/CadastroVoluntario') },
+      // Pagina de Comp Participar para Doação ou como ser um Parceiro Helping
+      { path: '/comoparticipar', component: () => import('../pages/Page/comoParticipar') },
       // Pagina das Ongs Cadastradas no Sistema
       { path: '/projetos', component: () => import('../pages/Page/projetos') }
     ]

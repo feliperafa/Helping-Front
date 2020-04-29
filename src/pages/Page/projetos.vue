@@ -19,7 +19,7 @@
 
       <q-card-actions>
         <q-btn flat to="/login">Doe Agora</q-btn>
-        <q-btn flat to="/cadastrovoluntario">Quero ser voluntariar</q-btn>
+        <q-btn flat @click="vai(ong.id)">Quero ser voluntariar</q-btn>
       </q-card-actions>
     </q-card>
   </div>
@@ -40,6 +40,10 @@ export default {
       this.$axios.get(`${process.env.API}/ongs`).then(response => {
         this.ongs = (response.data)
       })
+    },
+    vai: function (id) {
+      window.localStorage.id_ong_selecionada = id
+      this.$router.push('/cadastrovoluntario')
     }
   },
   beforeMount () {

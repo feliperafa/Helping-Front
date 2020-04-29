@@ -1,15 +1,5 @@
 <template>
-<div class="q-px-xl q-py-md" style="max-width: 1500px">
-    <div class="row">
-      <div class="col">
-        <div class="row q-col-gutter-lg">
-          <div class="col-3">
-            <q-btn class="full-width" color="cyan" label="Button" />
-          </div>
-        </div>
-      </div>
-    </div>
-   </div>
+<h1>Dash Board Teste</h1>
 </template>
 
 <script>
