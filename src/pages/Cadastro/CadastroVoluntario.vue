@@ -40,11 +40,6 @@
       v-model="voluntarios.email"
       label="Informe Seu E-mail... *" />
 
-      <q-input type="Text" class="col-12"
-      required
-      filled v-model="voluntarios.ong_id"
-      label="Informe pra qual Ong voce deseja se voluntariar... *" />
-
        <div class="q-pa-md" style="max-width: 400px">
     <div class="q-gutter-x-xs q-gutter-y-lg">
        <q-btn @click="save"
@@ -61,6 +56,7 @@
 </q-page>
 </template>
 <script>
+
 export default {
   name: 'Voluntario',
   data () {
@@ -71,21 +67,21 @@ export default {
         numero: '',
         telefone: '',
         cpf: '',
-        email: '',
-        id_ong: ''
+        email: ''
       },
       ongs: []
     }
   },
   methods: {
     async save () {
-      await this.$axios.post(`${process.env.API}/ongs/:ong_id/voluntario`, this.voluntarios).then((res) => {
+      const id = localStorage.getItem('id_ong_selecionada')
+      await this.$axios.post(`${process.env.API}/ongs/${id}/voluntario`, this.voluntarios).then((res) => {
         alert('você fez uma solicitação para ser vonluntario , aguarde que entraremos em contato.')
         this.reset()
-        this.$router('/')
+        this.$router.push('/projetos')
       }).catch(err => {
         console.log(err)
-        alert('já existe uma solicitação para você ser vonluntario desta Ong , aguarde que entraremos em contato.')
+        alert('Voluntario já Cadastrado para esta ONG!')
       })
     },
     reset () {

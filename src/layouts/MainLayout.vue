@@ -35,7 +35,7 @@ Quasar
         <q-route-tab to="/" label="Início" />
         <q-route-tab to="/projetos" label="Projetos" />
         <q-route-tab to="/paceiras" label="Paceiros" />
-        <q-route-tab to="/page3" label="Como Participar" />
+        <q-route-tab to="/comoparticipar" label="Como Participar" />
         <q-route-tab to="/login" label="Login" />
         <q-route-tab to="/selectcadastro" label="Cadastre-se" />
       </q-tabs>
