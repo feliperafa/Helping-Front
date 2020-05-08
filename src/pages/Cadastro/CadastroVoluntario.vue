@@ -76,7 +76,7 @@ export default {
     async save () {
       const id = localStorage.getItem('id_ong_selecionada')
       await this.$axios.post(`${process.env.API}/ongs/${id}/voluntario`, this.voluntarios).then((res) => {
-        alert('você fez uma solicitação para ser vonluntario , aguarde que entraremos em contato.')
+        alert('você fez uma solicitação para ser vonluntario, aguarde que entraremos em contato.')
         this.reset()
         this.$router.push('/projetos')
       }).catch(err => {

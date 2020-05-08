@@ -22,6 +22,8 @@ const routes = [
       { path: '/cadastrovoluntario', component: () => import('../pages/Cadastro/CadastroVoluntario') },
       // Pagina de Comp Participar para Doação ou como ser um Parceiro Helping
       { path: '/comoparticipar', component: () => import('../pages/Page/comoParticipar') },
+      // Pagina de Doação
+      { path: '/doacao', component: () => import('../pages/Page/doacao') },
       // Pagina das Ongs Cadastradas no Sistema
       { path: '/projetos', component: () => import('../pages/Page/projetos') }
     ]

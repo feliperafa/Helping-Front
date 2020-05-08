@@ -18,7 +18,7 @@
       <q-separator dark />
 
       <q-card-actions>
-        <q-btn flat to="/login">Doe Agora</q-btn>
+        <q-btn flat @click="doa(ong.id)">Doe Agora</q-btn>
         <q-btn flat @click="vai(ong.id)">Quero ser voluntariar</q-btn>
       </q-card-actions>
     </q-card>
@@ -44,6 +44,10 @@ export default {
     vai: function (id) {
       window.localStorage.id_ong_selecionada = id
       this.$router.push('/cadastrovoluntario')
+    },
+    doa: function (id) {
+      window.localStorage.id_ong_selecionada = id
+      this.$router.push('/doacao')
     }
   },
   beforeMount () {
