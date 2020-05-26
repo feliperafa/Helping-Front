@@ -79,6 +79,7 @@ export default {
   methods: {
 
     async save () {
+      console.log(this.newOngs)
       await this.$axios.post(`${process.env.API}/ongs`, this.newOngs).then((res) => {
         alert('ONG Cadastrada com sucesso !')
         this.reset()

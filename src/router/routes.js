@@ -16,6 +16,8 @@ const routes = [
       { path: '/cadastroong', component: () => import('../pages/Cadastro/CadastroOng') },
       // Pagina de Empresas Parceiras
       { path: '/paceiras', component: () => import('../pages/page/empresasPaceiras') },
+      // Pagina Para Atualizar Cadastro
+      { path: '/atualizarcadastro', component: () => import('../pages/Dashboard/atualizaCadastro') },
       // Pagina de DashBoard Para o Administrador
       { path: '/dashboard', component: () => import('../pages/Dashboard/dashboard') },
       // Pagina de Cadastro de Voluntario

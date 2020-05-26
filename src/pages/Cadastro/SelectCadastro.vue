@@ -12,6 +12,5 @@
 <style lang="scss">
 .img {
   background-image: linear-gradient(to right, white, grey);
-  padding:43.3vh;
   }
 </style>

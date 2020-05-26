@@ -2,6 +2,11 @@
 
    <div class="q-pa-lg img" style="padding-top: 48px; padding-bottom: 220px">
          <div class="q-pa-md">
+           <div class="q-pa-md" style="max-width: 500px">
+    <div class="q-gutter-sm">
+      <q-btn color="cyan" label="Logout" @click="removeSesion"/>
+    </div>
+  </div>
     <q-markup-table>
       <thead>
         <tr>
@@ -25,24 +30,28 @@
   </div>
   <div class="q-pa-md" style="max-width: 500px">
     <div class="q-gutter-sm">
-      <q-btn color="cyan" label="Atualizar Dados" />
-    </div>
-  </div>
-  <div class="q-pa-md" style="max-width: 500px">
-    <div class="q-gutter-sm">
-      <q-btn color="cyan" label="Logout" @click="removeSesion"/>
+      <q-btn color="cyan" label="Atualizar Dados" to="atualizarcadastro"/>
     </div>
   </div>
   </div>
-
 </template>
 <script>
-
 export default {
   name: 'Doadores',
   data () {
     return {
-      doador: []
+      ong: [],
+      doador: [],
+      atualizaOng: {
+        nome: '',
+        email: '',
+        endereco: '',
+        numero: '',
+        cnpj: '',
+        telefone: '',
+        descricao: '',
+        senha: ''
+      }
     }
   },
   methods: {
@@ -53,25 +62,35 @@ export default {
           this.doador = (response.data)
         })
       } else {
+        alert('Para ter acesso a Rota precisa esta Logado no Sistema !')
         this.$router.push('/login')
       }
+    },
+    async atualizaCadastroOng () {
+      const idUsuarioLogado = localStorage.getItem('idUsuarioLogado')
+      await this.$axios.put(`${process.env.API}/ongs/${idUsuarioLogado}`, this.atualizaOng).then((res) => {
+        console.log(res.data)
+      }).catch(err => {
+        console.log(err)
+      })
     },
     removeSesion () {
       localStorage.clear()
       this.$router.push('/login')
-
-      // this.localStorage = {}
+    },
+    carregarOng () {
+      const idUsuarioLogado = localStorage.getItem('idUsuarioLogado')
+      this.$axios.get(`${process.env.API}/ongs/${idUsuarioLogado}`).then(res => {
+        this.ong = (res.data)
+      })
     }
   },
   beforeMount () {
     this.carregarDoador()
-  },
-  formatarData () {
-    new Date(this.doador.createdAt).toLocaleDateString('pt-BR')
-    const dataCriacao = new Date(this.doador.createdAt).toLocaleDateString('pt-BR')
-    console.log(dataCriacao)
-    console.log('data: ', this.doador.createdAt)
-  }
+  }//,
+  // reset () {
+  //   this.ong = {}
+  // }
 }
 </script>
 <style>
