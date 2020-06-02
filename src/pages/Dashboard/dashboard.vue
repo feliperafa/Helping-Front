@@ -6,7 +6,11 @@
     <div class="q-gutter-sm">
       <q-btn color="cyan" label="Logout" @click="removeSesion"/>
     </div>
+    <div class="q-gutter-sm">
+      <q-btn color="cyan" label="Atualizar Dados" to="atualizarcadastro"/>
+    </div>
   </div>
+  <h3>Doações</h3>
     <q-markup-table>
       <thead>
         <tr>
@@ -27,11 +31,27 @@
         </tr>
       </tbody>
     </q-markup-table>
-  </div>
-  <div class="q-pa-md" style="max-width: 500px">
-    <div class="q-gutter-sm">
-      <q-btn color="cyan" label="Atualizar Dados" to="atualizarcadastro"/>
-    </div>
+    <h3>Voluntarios</h3>
+    <q-markup-table>
+      <thead>
+        <tr>
+          <th class="text-left">Nome Voluntario</th>
+          <th class="text-left">E-mail Voluntario</th>
+          <th class="text-left">telefone Voluntario</th>
+          <th class="text-left">Endereço Voluntario</th>
+          <th class="text-left">Data da Cadastro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(voluntario, index) in voluntario" :key="index">
+          <td class="text-left">{{ voluntario.nome }}</td>
+          <td class="text-left">{{ voluntario.email }}</td>
+          <td class="text-left">{{ voluntario.telefone }}</td>
+          <td class="text-left">{{ voluntario.endereco }}</td>
+          <td class="text-left">{{ new Date(voluntario.createdAt).toLocaleDateString('pt-BR') }}</td>
+        </tr>
+      </tbody>
+    </q-markup-table>
   </div>
   </div>
 </template>
@@ -41,6 +61,7 @@ export default {
   data () {
     return {
       ong: [],
+      voluntario: [],
       doador: [],
       atualizaOng: {
         nome: '',
@@ -55,10 +76,10 @@ export default {
     }
   },
   methods: {
-    carregarDoador () {
+    async carregarDoador () {
       if (localStorage.getItem('idUsuarioLogado')) {
         const idUsuarioLogado = localStorage.getItem('idUsuarioLogado')
-        this.$axios.get(`${process.env.API}/doacao/${idUsuarioLogado}`).then(response => {
+        await this.$axios.get(`${process.env.API}/doacao/${idUsuarioLogado}`).then(response => {
           this.doador = (response.data)
         })
       } else {
@@ -78,19 +99,23 @@ export default {
       localStorage.clear()
       this.$router.push('/login')
     },
-    carregarOng () {
+    async carregarVoluntario () {
       const idUsuarioLogado = localStorage.getItem('idUsuarioLogado')
-      this.$axios.get(`${process.env.API}/ongs/${idUsuarioLogado}`).then(res => {
+      await this.$axios.get(`${process.env.API}/ongs/${idUsuarioLogado}/voluntario`).then(res => {
+        this.voluntario = (res.data)
+      })
+    },
+    async carregarOng () {
+      const idUsuarioLogado = localStorage.getItem('idUsuarioLogado')
+      await this.$axios.get(`${process.env.API}/ongs/${idUsuarioLogado}`).then(res => {
         this.ong = (res.data)
       })
     }
   },
   beforeMount () {
     this.carregarDoador()
-  }//,
-  // reset () {
-  //   this.ong = {}
-  // }
+    this.carregarVoluntario()
+  }
 }
 </script>
 <style>
