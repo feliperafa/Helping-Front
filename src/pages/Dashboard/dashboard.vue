@@ -10,7 +10,7 @@
       <q-btn color="cyan" label="Atualizar Dados" to="atualizarcadastro"/>
     </div>
   </div>
-  <h3>Doações</h3>
+  <h4>Doações</h4>
     <q-markup-table>
       <thead>
         <tr>
@@ -31,7 +31,7 @@
         </tr>
       </tbody>
     </q-markup-table>
-    <h3>Voluntarios</h3>
+    <h4>Voluntarios</h4>
     <q-markup-table>
       <thead>
         <tr>
@@ -118,6 +118,3 @@ export default {
   }
 }
 </script>
-<style>
-
-</style>

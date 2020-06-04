@@ -1,6 +1,6 @@
 <template>
 <q-page>
-    <q-form class="form-cadastro q-gutter-lg center">
+    <q-form class="q-gutter-lg center">
       <div class="q-pa-md">
     <div class="row q-col-gutter-sm">
 
@@ -94,13 +94,3 @@ export default {
   }
 }
 </script>
-<style>
-.form-cadastro {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  }
-  .img {
-  background-image:linear-gradient(to right, white, grey);
-  }
-</style>

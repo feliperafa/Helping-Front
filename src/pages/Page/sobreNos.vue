@@ -61,10 +61,7 @@ export default {
   }
 }
 </script>
-<style lang="scss">
-.img {
-  background-image: linear-gradient(to right, white, grey);
-  }
+<style>
   .L {
     text-align: initial;
   }

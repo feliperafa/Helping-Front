@@ -98,17 +98,8 @@ export default {
 }
 </script>
 <style>
-.back {
-  background-image: url('../../assets/imgdoa2.jpg');
-}
 .txt {
 text-emphasis-position: initial;
 color: black;
-}
-.color {
-  background-color: black;
-}
-.img {
-  background-image: linear-gradient(to right, white, grey);
 }
 </style>

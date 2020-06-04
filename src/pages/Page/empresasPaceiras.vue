@@ -16,8 +16,3 @@
       </div>
       </div>
 </template>
-<style lang="stylus" scoped>
-.img {
-  background-image: linear-gradient(to right, white, grey);
-  }
-</style>

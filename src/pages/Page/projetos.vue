@@ -60,10 +60,4 @@ export default {
   width: 100%;
   max-width: 320px;
 }
-.cores {
-background-color:#A1CFFF;
-}
-.img {
-  background-image: linear-gradient(to right, white, grey);
-  }
 </style>

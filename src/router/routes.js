@@ -6,8 +6,6 @@ const routes = [
     children: [
       // Pagina Inicial
       { path: '/', component: () => import('../pages/Page/sobreNos') },
-      // Pagina Cadastro Doador
-      { path: '/cadastrodoador', component: () => import('../pages/Cadastro/CadastroDoador') },
       // Pagina de Login
       { path: '/login', component: () => import('../pages/Login/Login.vue') },
       // Pagina para Selecionar qual cadastro Criar Doador / Ong
