@@ -5,58 +5,60 @@
     <div class="row q-col-gutter-sm">
 
       <q-input type="text" class="col-12 col-md-6"
+      standout="bg-info text-white"
       required
       filled v-model="newOngs.nome"
       label="Informe o Nome da sua Ong... *" />
 
       <q-input type="text" class="col-12 col-md-6"
+      standout="bg-info text-white"
       required
       filled v-model="newOngs.endereco"
       label="Informe Seu Endereço... *" />
 
       <q-input type="text" class="col-12 col-md-6"
+      standout="bg-info text-white"
       required
       filled v-model="newOngs.numero"
       label="Informe Seu Número... *" />
 
       <q-input type="text" class="col-12 col-md-6"
+      standout="bg-info text-white"
       required
       filled v-model="newOngs.telefone"
       label="Informe Seu Telefone... *" />
 
      <q-input type="text" class="col-12 col-md-6"
+     standout="bg-info text-white"
       required
       filled v-model="newOngs.cnpj"
       label="Informe Seu cnpj... *" />
 
       <q-input type="text" class="col-12 col-md-6"
+      standout="bg-info text-white"
       required
       filled v-model="newOngs.email"
       label="Informe Seu E-mail... *" />
 
       <q-input type="password" class="col-12"
+      standout="bg-info text-white"
       required
       filled v-model="newOngs.senha"
       label="Informe Sua Senha... *" />
 
       <q-input type="textarea" class="col-12"
+      standout="bg-info text-white"
       required
       filled v-model="newOngs.descricao"
       label="Informe um breve texto sobre a causa que a Ong Apoia... *" />
 
-       <div class="q-pa-md" style="max-width: 400px">
-    <div class="q-gutter-x-xs q-gutter-y-lg">
-       <q-btn @click="save"
-        glossy color="cyan"
-        class="full-width">Cadastra</q-btn>
-        <q-btn to="/"
-        glossy color="cyan"
-        class="full-width">Voltar</q-btn>
-        </div>
-        </div>
         </div>
         </div>
     </q-form>
+    <q-tabs class="text-teal q-mb-ex">
+    <q-tab name="updatedados" icon="save" label="Participar" @click="save" color="cyan" />
+    <q-tab name="logout" icon="arrow_back_ios" label="Voltar" @click="vai" color="cyan" />
+  </q-tabs>
 </q-page>
 </template>
 <script>
@@ -87,6 +89,9 @@ export default {
       }).catch(err => {
         console.log(err)
       })
+    },
+    vai () {
+      this.$router.push('/')
     },
     reset () {
       this.newOngs = {}

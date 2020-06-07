@@ -17,6 +17,7 @@
       <q-carousel-slide :name="4" img-src="../../assets/imgdoa4.jpg" />
     </q-carousel>
     </div>
+
 <q-form class="q-gutter-lg center">
   <div class="q-pa-md">
     <div class="row q-col-gutter-sm">
@@ -55,12 +56,10 @@ Cada família que atendemos tem um custo mensal de R$ 800,00. Veja o quanto voc�
       </div>
     </div>
   </q-form>
-      <div>
-       <q-btn
-        @click="save"
-        glossy color="cyan"
-        class="full-width"> DOAR </q-btn>
-      </div>
+  <q-tabs class="text-teal">
+    <q-tab name="updatedados" icon="save" label="Participar" @click="save" color="cyan" />
+    <q-tab name="logout" icon="arrow_back_ios" label="Voltar" @click="vai" color="cyan" />
+  </q-tabs>
   </q-page>
 </template>
 <script>
@@ -90,6 +89,9 @@ export default {
         console.log(err)
         alert('Erro na Doação')
       })
+    },
+    vai () {
+      this.$router.push('/projetos')
     },
     reset () {
       this.voluntarios = {}

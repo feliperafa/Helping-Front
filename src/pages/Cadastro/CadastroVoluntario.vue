@@ -1,58 +1,60 @@
 <template>
-<q-page>
-    <q-form class="form-cadastro q-gutter-lg center">
-      <div class="q-pa-md">
-    <div class="row q-col-gutter-sm">
+<q-page class="flex-center row">
+  <div class="q-pa-md">
+    <q-form class="q-gutter-sm">
+    <div class="col-12 text-center">
+  <div class="text-h5">Seja a mudança que quer ver no mundo.</div>
+  <div class="text-h5">Voluntarie-se e ajude quem precisa !</div>
+</div>
 
       <q-input type="text" class="col-12 col-md-6"
+      standout="bg-info text-white"
       required
       filled
       v-model="voluntarios.nome"
       label="Informe seu Nome Voluntario... *" />
 
       <q-input type="text" class="col-12 col-md-6"
+      standout="bg-info text-white"
       required
       filled
       v-model="voluntarios.endereco"
       label="Informe Seu Endereço... *" />
 
       <q-input type="text" class="col-12 col-md-6"
+      standout="bg-info text-white"
       required
       filled
       v-model="voluntarios.numero"
-      label="Informe o Número do Endereço... *" />
+      label="Endereço Número..." />
 
       <q-input type="text" class="col-12 col-md-6"
+      standout="bg-info text-white"
       required
       filled
       v-model="voluntarios.telefone"
       label="Informe Seu Telefone... *" />
 
      <q-input type="text" class="col-12 col-md-6"
+     standout="bg-info text-white"
       required
       filled
       v-model="voluntarios.cpf"
       label="Informe Seu CPF... *" />
 
       <q-input type="text" class="col-12 col-md-6"
+      standout="bg-info text-white"
       required
       filled
       v-model="voluntarios.email"
       label="Informe Seu E-mail... *" />
 
-       <div class="q-pa-md" style="max-width: 400px">
-    <div class="q-gutter-x-xs q-gutter-y-lg">
-       <q-btn @click="save"
-        glossy color="cyan"
-        class="full-width">Cadastra</q-btn>
-        <q-btn to="/"
-        glossy color="cyan"
-        class="full-width">Voltar</q-btn>
-        </div>
-        </div>
-        </div>
-        </div>
     </q-form>
+    <q-tabs class="text-teal q-mb-ex">
+    <q-tab name="updatedados" icon="save" label="Participar" @click="save" color="cyan" />
+    <q-tab name="logout" icon="arrow_back_ios" label="Voltar" @click="vai" color="cyan" />
+  </q-tabs>
+</div>
 </q-page>
 </template>
 <script>
@@ -83,6 +85,9 @@ export default {
         console.log(err)
         alert('Voluntario já Cadastrado para esta ONG!')
       })
+    },
+    vai () {
+      this.$router.push('/projetos')
     },
     reset () {
       this.voluntarios = {}

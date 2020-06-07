@@ -9,10 +9,10 @@
       </q-card-section>
 
       <q-card-section class="q-pt-none">
-        Descrição: {{ ong.descricao }}<br>
         Email: {{ ong.email }}<br>
         Telefone: {{ ong.telefone }}<br>
         Endereço: {{ ong.endereco }}<br>
+        Descrição: {{ ong.descricao }}<br>
       </q-card-section>
 
       <q-separator dark />

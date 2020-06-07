@@ -1,16 +1,16 @@
 <template>
-
-   <div class="q-pa-lg img" style="padding-top: 48px; padding-bottom: 220px">
-         <div class="q-pa-md">
-           <div class="q-pa-md" style="max-width: 500px">
-    <div class="q-gutter-sm">
-      <q-btn color="cyan" label="Logout" @click="removeSesion"/>
-    </div>
-    <div class="q-gutter-sm">
-      <q-btn color="cyan" label="Atualizar Dados" to="atualizarcadastro"/>
-    </div>
-  </div>
-  <h4>Doações</h4>
+<q-page class="flex-center">
+  <q-tabs class="text-teal">
+    <q-tab name="updatedados" icon="edit" label="Atualizar Dados" @click="vai" color="cyan" />
+    <q-tab name="logout" icon="logout" label="Logout" @click="removeSesion" color="cyan" />
+  </q-tabs>
+  <div>
+<tr v-for="(ong, index) in ong" :key="index">
+  <td class="text-left">{{ ong.nome }}</td>
+</tr>
+</div>
+  <div class="q-pa-lg" style="padding-top:0px;">
+  <h5>Doações</h5>
     <q-markup-table>
       <thead>
         <tr>
@@ -31,7 +31,7 @@
         </tr>
       </tbody>
     </q-markup-table>
-    <h4>Voluntarios</h4>
+    <h5>Voluntarios</h5>
     <q-markup-table>
       <thead>
         <tr>
@@ -53,7 +53,7 @@
       </tbody>
     </q-markup-table>
   </div>
-  </div>
+  </q-page>
 </template>
 <script>
 export default {
@@ -110,6 +110,9 @@ export default {
       await this.$axios.get(`${process.env.API}/ongs/${idUsuarioLogado}`).then(res => {
         this.ong = (res.data)
       })
+    },
+    vai () {
+      this.$router.push('/atualizarcadastro')
     }
   },
   beforeMount () {

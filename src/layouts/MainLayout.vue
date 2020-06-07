@@ -37,7 +37,8 @@ Quasar
         <q-route-tab to="/paceiras" label="Paceiros" />
         <q-route-tab to="/comoparticipar" label="Como Participar" />
         <q-route-tab to="/login" label="Login" />
-        <q-route-tab to="/selectcadastro" label="Cadastre-se" />
+        <q-route-tab to="/selectcadastro" label="Cadastro" />
+
       </q-tabs>
     </q-header>
 
@@ -63,3 +64,8 @@ export default {
   }
 }
 </script>
+<style lang="stylus">
+  body{
+    background-color :#E5E5E5;
+  }
+</style>

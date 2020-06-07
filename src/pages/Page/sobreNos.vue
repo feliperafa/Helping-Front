@@ -1,4 +1,5 @@
 <template>
+<q-page>
   <div class="q-pa-md img">
     <q-carousel
       animated
@@ -51,6 +52,7 @@ Desde a fundação, já atendemos mais de 670 famílias e impactamos mais de 2.8
       </div>
   </div>
   </div>
+  </q-page>
 </template>
 <script>
 export default {
@@ -61,8 +63,3 @@ export default {
   }
 }
 </script>
-<style>
-  .L {
-    text-align: initial;
-  }
-</style>
