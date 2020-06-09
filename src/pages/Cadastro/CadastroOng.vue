@@ -8,49 +8,58 @@
       standout="bg-info text-white"
       required
       filled v-model="newOngs.nome"
-      label="Informe o Nome da sua Ong... *" />
+      label="Informe o Nome da sua Ong... *"
+      :rules="[ val => val && val.length > 0 || 'Campo Obrigatorio' ]"/>
 
       <q-input type="text" class="col-12 col-md-6"
       standout="bg-info text-white"
       required
       filled v-model="newOngs.endereco"
-      label="Informe Seu Endereço... *" />
+      label="Informe Seu Endereço... *"
+      :rules="[ val => val && val.length > 0 || 'Campo Obrigatorio' ]"/>
 
-      <q-input type="text" class="col-12 col-md-6"
+      <q-input type="number" class="col-12 col-md-6"
       standout="bg-info text-white"
       required
       filled v-model="newOngs.numero"
-      label="Informe Seu Número... *" />
+      label="Informe Seu Número de Endereço... *" />
 
       <q-input type="text" class="col-12 col-md-6"
       standout="bg-info text-white"
       required
+      :mask="mask"
       filled v-model="newOngs.telefone"
-      label="Informe Seu Telefone... *" />
+      label="Telefone DDD + Número"
+      :rules="[ val => val && val.length > 0 || 'Campo Obrigatorio' ]" />
 
      <q-input type="text" class="col-12 col-md-6"
      standout="bg-info text-white"
       required
       filled v-model="newOngs.cnpj"
-      label="Informe Seu cnpj... *" />
+      label="Informe Seu cnpj... *"
+      :rules="[ val => val && val.length > 0 || 'Campo Obrigatorio' ]"
+      mask="##.###.###/####-##" />
 
       <q-input type="text" class="col-12 col-md-6"
       standout="bg-info text-white"
       required
       filled v-model="newOngs.email"
-      label="Informe Seu E-mail... *" />
+      label="Informe Seu E-mail... *"
+      :rules="[ val => val && val.length > 0 || 'Campo Obrigatorio' ]" />
 
-      <q-input type="password" class="col-12"
+      <q-input type="password" class="col-12 col-md-12"
       standout="bg-info text-white"
       required
       filled v-model="newOngs.senha"
-      label="Informe Sua Senha... *" />
+      label="Informe Sua Senha... *"
+      :rules="[ val => val && val.length > 0 || 'Campo Obrigatorio']" />
 
-      <q-input type="textarea" class="col-12"
+      <q-input type="textarea" class="col-12 col-sm-12"
       standout="bg-info text-white"
       required
       filled v-model="newOngs.descricao"
-      label="Informe um breve texto sobre a causa que a Ong Apoia... *" />
+      label="Informe um breve texto sobre a causa que a Ong Apoia... *"
+      :rules="[ val => val && val.length > 0 || 'Campo Obrigatorio' ]" />
 
         </div>
         </div>
@@ -78,6 +87,24 @@ export default {
       }
     }
   },
+  watch: {
+    mask () {
+      const input = this.$refs.telefone.$refs.input
+      requestAnimationFrame(() => {
+        input.selectionStart = input.value.length
+      })
+    }
+  },
+  computed: {
+    mask () {
+      switch (true) {
+        case this.newOngs.telefone.length <= 8: return '####-#####'
+        case this.newOngs.telefone.length === 9: return '#####-#####'
+        case this.newOngs.telefone.length === 10: return '(##) ####-#####'
+        default: return '(##) #####-####'
+      }
+    }
+  },
   methods: {
 
     async save () {
@@ -98,4 +125,5 @@ export default {
     }
   }
 }
+
 </script>

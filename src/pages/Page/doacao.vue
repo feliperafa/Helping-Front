@@ -21,29 +21,33 @@
 <q-form class="q-gutter-lg center">
   <div class="q-pa-md">
     <div class="row q-col-gutter-sm">
-      <h5 class="txt">Com a sua ajuda, impulsionamos famílias em vulnerabilidade social a conquistarem um futuro digno!
-Cada família que atendemos tem um custo mensal de R$ 800,00. Veja o quanto você pode transformar em apenas um clique.</h5>
+      <div class="text-h5">Com a sua ajuda, impulsionamos famílias em vulnerabilidade social a conquistarem um futuro digno!
+Cada família que atendemos tem um custo mensal de R$ 800,00. Veja o quanto você pode transformar em apenas um clique.</div>
 
       <q-input type="text" class="col-6 col-md-3"
       standout="bg-info text-white"
       required
       filled
       v-model="newDoador.nome"
-      label="Informe Seu Nome... *" />
+      label="Informe Seu Nome... *"
+      :rules="[ val => val && val.length > 0 || 'Campo Obrigatorio' ]"/>
 
        <q-input type="text" class="col-6 col-md-3"
       standout="bg-info text-white"
       required
       filled
       v-model="newDoador.cpf"
-      label="Informe Seu CPF... *" />
+      label="Informe Seu CPF... *"
+      mask="###.###.###-##"
+      :rules="[ val => val && val.length > 0 || 'Campo Obrigatorio' ]"/>
 
        <q-input type="text" class="col-6 col-md-3"
       standout="bg-info text-white"
       required
       filled
       v-model="newDoador.email"
-      label="Informe Seu E-mail... *" />
+      label="Informe Seu E-mail... *"
+      :rules="[ val => val && val.length > 0 || 'Campo Obrigatorio' ]"/>
 
       <q-select type="text" class="col-6 col-md-3"
       standout="bg-info text-white"
@@ -51,13 +55,14 @@ Cada família que atendemos tem um custo mensal de R$ 800,00. Veja o quanto voc�
       :options="opcao"
       filled
       v-model="newDoador.valor_doacao"
-      label="Informe Seu Valor Doação... *" />
+      label="Informe Seu Valor Doação... *"
+      :rules="[ val => val && val.length > 0 || 'Campo Obrigatorio' ]"/>
 
       </div>
     </div>
   </q-form>
   <q-tabs class="text-teal">
-    <q-tab name="updatedados" icon="save" label="Participar" @click="save" color="cyan" />
+    <q-tab name="updatedados" icon="save" label="Participar" type="submit" @click="save" color="cyan" />
     <q-tab name="logout" icon="arrow_back_ios" label="Voltar" @click="vai" color="cyan" />
   </q-tabs>
   </q-page>
@@ -87,7 +92,7 @@ export default {
         this.$router.push('/projetos')
       }).catch(err => {
         console.log(err)
-        alert('Erro na Doação')
+        alert('Erro na Doação, Reveja os dados e Refaça a Operação')
       })
     },
     vai () {
@@ -95,6 +100,11 @@ export default {
     },
     reset () {
       this.voluntarios = {}
+    },
+    computed: {
+      isValid: function () {
+        return this.name !== '' && this.email !== ''
+      }
     }
   }
 }

@@ -10,6 +10,7 @@
       <q-input type="text" class="col-12 col-md-6"
       standout="bg-info text-white"
       required
+      :rules="[ val => val && val.length > 0 || 'Campo Obrigatorio' ]"
       filled
       v-model="voluntarios.nome"
       label="Informe seu Nome Voluntario... *" />
@@ -17,20 +18,7 @@
       <q-input type="text" class="col-12 col-md-6"
       standout="bg-info text-white"
       required
-      filled
-      v-model="voluntarios.endereco"
-      label="Informe Seu Endereço... *" />
-
-      <q-input type="text" class="col-12 col-md-6"
-      standout="bg-info text-white"
-      required
-      filled
-      v-model="voluntarios.numero"
-      label="Endereço Número..." />
-
-      <q-input type="text" class="col-12 col-md-6"
-      standout="bg-info text-white"
-      required
+      :rules="[ val => val && val.length > 0 || 'Campo Obrigatorio' ]"
       filled
       v-model="voluntarios.telefone"
       label="Informe Seu Telefone... *" />
@@ -38,16 +26,33 @@
      <q-input type="text" class="col-12 col-md-6"
      standout="bg-info text-white"
       required
+      :rules="[ val => val && val.length > 0 || 'Campo Obrigatorio' ]"
       filled
       v-model="voluntarios.cpf"
+      mask="###.###.###-##"
       label="Informe Seu CPF... *" />
 
       <q-input type="text" class="col-12 col-md-6"
       standout="bg-info text-white"
       required
+      :rules="[ val => val && val.length > 0 || 'Campo Obrigatorio' ]"
       filled
       v-model="voluntarios.email"
       label="Informe Seu E-mail... *" />
+      <q-input type="text" class="col-12 col-md-6"
+      standout="bg-info text-white"
+      required
+      :rules="[ val => val && val.length > 0 || 'Campo Obrigatorio' ]"
+      filled
+      v-model="voluntarios.endereco"
+      label="Informe Seu Endereço... *" />
+
+      <q-input type="number" class="col-12 col-md-6"
+      standout="bg-info text-white"
+      required
+      filled
+      v-model="voluntarios.numero"
+      label="Endereço Número..." />
 
     </q-form>
     <q-tabs class="text-teal q-mb-ex">
